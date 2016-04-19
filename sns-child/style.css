@@ -1,0 +1,18 @@
+/*
+ Theme Name:   SNS Child Theme
+ Theme URI:    http://umc.utah.edu/
+ Description:  Utah 2014 Child Theme. Responsive theme that supports both 1024 and full-width layouts.
+ Author:	   Stratusclear
+ Author URI:   http://stratusclear.com
+ Template:     umc2014
+ Version:	   1.5
+*/
+
+
+/* = Theme customization starts here - rob
+-------------------------------------------------------------- */
+
+.search-field {
+    width:150px;
+}
+

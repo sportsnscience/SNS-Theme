@@ -1,0 +1,1280 @@
+/*
+Theme Name:Utah 2014
+Theme URI:http://umc.utah.edu/
+Description:Responsive theme that supports both 1024 and full-width layouts.
+Version:1.2
+Author:Dave Titensor (design), Dave White (code)
+Author URI: http://umc.utah.edu/
+*/
+
+
+/***********************************************************
+
+Table of Contents
+------------------------------------------------------------
+1. GLOBAL STYLES
+2. HEADER (AND SHARED FOOTER)
+3. MAIN CONTENT
+4. FOOTER
+5. HELPER CLASSES
+6. MEDIA QUERIES
+***********************************************************/
+
+
+/*==========================================================
+1. GLOBAL STYLES
+==========================================================*/
+
+body {
+	font-size: 1em;
+	line-height: 1.4;
+	font: 16px/26px 'Open Sans', Helvetica, Arial, sans-serif;
+	margin: 0;
+	background-color:#e1e1e1;
+}
+
+/* ----- heading levels ---------*/
+h1, h2 {
+	letter-spacing:-.03em;
+	line-height:1.2em;
+	margin: 1em 0 .5em;
+}
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+h3,h4,h5,h6 { 
+	letter-spacing:-.03em;
+	margin: 1.5em 0 .5em;
+}
+h3 {font-size: 1.3em;}
+h4 {font-size: 1.1em;}
+h5 {font-size: 1em;}
+h6 {font-size: .9em;}
+
+p { margin:.5em 0; }
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid rgb(204, 204, 204);
+	margin: 1em 0;
+	padding: 0;
+}
+img { vertical-align: middle; }
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+textarea { resize: vertical;}
+
+a, a:active {
+	color: #cc0000;
+}
+
+a:hover {
+	color: #ff0000;
+}
+
+a:visited {
+	color: #990000;
+}
+
+ul.underline-list, .widget_recent_entries ul, .widget_archive ul, .widget_categories ul , .widget_nav_menu ul{ 
+	list-style-type: none; 
+	padding: 0;
+	margin: 0 0 1em 0;
+	width: 100%;
+}
+ul.underline-list li, .widget_recent_entries li, .widget_archive li, .widget_categories li, .widget_nav_menu li {
+	border-bottom: 1px solid #e1e1e1;
+	padding: 0.2em 0;
+}
+
+ol.underline-list { 
+	margin: 0 0 1em 0;
+	width: 100%;
+}
+ol.underline-list li {
+	border-bottom: 1px solid #e1e1e1;
+	padding: 0.2em 0;
+}
+.nobr{
+	white-space:nowrap; 
+	clear: both;
+}
+.center-align {
+	text-align: center;
+}
+
+.left-align {
+	text-align: left;
+}
+
+.float-right {
+	float: right;
+}
+
+.float-left {
+	float: left;
+}
+
+/*==========================================================
+2. HEADER
+==========================================================*/
+
+#header-container {
+	width: 100%;
+}
+
+header {
+	max-width: 1024px;
+	margin: 0 auto;
+}
+
+header h1 {
+	font-family: 'Open Sans Condensed';
+	margin: 0 0 0 0.4em;
+	font-weight: 300;
+	font-size: 2em;
+	letter-spacing: 0;
+	/*  ----  without header background image 
+	color:#333;
+	text-shadow: 1px 1px #fff; ---- */
+	/*  ----  with header background image ---- */
+	color:#fff;
+	text-shadow: 1px 1px #000;
+	
+}
+
+header#masthead *{
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;    
+}
+
+.header-color {
+	background: #cc0000;
+}
+
+.main-headline {
+	padding: 1em 0 1em 0;
+}
+
+.main-headline a {
+	color: #fff;
+}
+
+.main-headline a:hover {
+	text-decoration: none;
+}
+
+#utah-logo {
+	background-image: url(images/global/ulogo.png);  /* need a @2x version for retina */
+	width:175px;
+	height: 50px;
+	background-size:185px 50px;
+	background-repeat: no-repeat;
+	padding: 1em;
+	padding-right: 0;
+	background-position: .7em 1em;
+	display: inline;
+	float: left;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi) {
+	#utah-logo {
+		background-image:url(images/global/ulogo@2x.png);
+		width:175px;
+		height: 50px;
+		background-size:185px 50px; 
+		display: inline;
+		float: left; 
+	}
+}
+
+#header-bg-image {
+	display: none;
+}
+
+/* ---------------------------------------
+	SEARCH AREA
+------------------------------------------*/
+#search-area {
+	background-color:white;
+	float:right;
+	margin: 2em 1em 0 .5em;	
+	position:relative;	
+}
+#search {
+	border:1px solid rgb(171, 170, 168);
+	padding:6px 30px 6px 2px;
+	height:1.2em;
+	width:52px;
+}
+#search-btn {
+	background: white url(images/global/sprite_tools.png) no-repeat -796px 4px;
+	border:none;
+	color:transparent;
+	font-size:0;
+	height:25px;
+	padding:0;
+	position:absolute;
+	right:1px;
+	top:3px;
+	width:25px;
+}
+#search-btn:hover,
+#search-btn:focus,
+#search-btn:active {
+	background-color:rgb(215, 215, 215);
+}
+/* -- input watermark images --*/
+#search.watermark { background:url(images/global/sprite_tools.png) no-repeat -590px 7px;}
+
+
+/* ----------------------------------------------
+	TOP NAVIGATION (AND BOTTOM NAV SHARED STYLES)
+-------------------------------------------------*/
+#top-nav {
+	background: #333;
+	width: 100%;
+	min-height: 34px;
+	z-index:9999;
+}
+
+#top-nav .top-mobile-nav {
+	display: block;
+	margin: 0 0 0 0.8em;
+	color: #fff;
+	font-size: 0.9em;
+	line-height: 2.3em;
+	text-decoration: none;
+}
+
+#top-nav .top-mobile-nav span {
+	float: right;
+	width: 30px;
+	height: 34px;
+	margin: 0 4px;
+	background: url(images/global/sprite_elements.png) no-repeat 5px -390px;
+}
+
+#top-nav ul.top-menu, #bottom-nav ul.bottom-menu {
+	display: none;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#top-nav ul.top-menu li, #bottom-nav ul.bottom-menu li {
+	padding: 0;
+	border: 1px solid #999;
+	border-top: 0;
+	font-size: 0.8em;
+	font-weight: bold;
+	text-transform: uppercase;
+	background: rgb(196, 196, 197);
+	cursor: pointer;
+}
+
+#top-nav ul.top-menu li h3, #bottom-nav ul.bottom-menu li h3 {
+	padding: 4px 10px;
+	font-size: 1em;
+	margin: 0 10px 0 0;
+	letter-spacing: 0em;
+	background: url(images/global/arrow_left.png) right no-repeat;
+}
+
+#top-nav ul.top-menu li:hover, #bottom-nav ul.bottom-menu li:hover {
+	background-color: rgb(170, 170, 172);
+}
+
+#top-nav ul.top-menu li.selected, #bottom-nav ul.bottom-menu li.selected {
+	background-color: rgb(170, 170, 172);
+}
+
+#top-nav ul.top-menu li a, #bottom-nav ul.bottom-menu li a {
+	text-decoration: none;
+	color: #000;
+}
+
+#top-nav ul.top-sub-menu, #bottom-nav ul.bottom-sub-menu {
+	display: none;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#top-nav ul.top-sub-menu li, #bottom-nav ul.bottom-sub-menu li {
+	margin: 0;
+	padding: 4px 0;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 0;
+	width: 100%;
+	font-size: 1em;
+	font-weight: 100;
+	background-color: rgb(221, 221, 220);
+
+}
+
+#top-nav ul.top-sub-menu li:hover, #bottom-nav ul.bottom-sub-menu li:hover {
+	background-color: #f1f1f1;
+}
+
+#top-nav ul.top-sub-menu li:first-child, #bottom-nav ul.bottom-sub-menu li:first-child {
+	border-top: 1px solid #999;
+}
+
+#top-nav ul.top-sub-menu ul li:first-child {
+	border-top: 0;
+}
+
+#top-nav ul.top-sub-menu ul li a {
+	padding: 0 20px 0 30px; 
+}
+
+#top-nav ul.top-sub-menu li a, #bottom-nav ul.bottom-sub-menu li a {
+	padding: 0 20px;
+	display: block;
+}
+
+
+
+/*==========================================================
+3. MAIN CONTENT
+==========================================================*/
+
+#main-container {
+	background: #fff;
+	width: 100%;
+	margin: 0 auto;
+	padding:10px 0 0 0;
+	min-height: 100px;
+	font-size:0.9em;
+}
+
+.breadcrumb {
+	margin-left: 0;
+}
+.text-widget{
+	max-width: 1024px;
+	margin: 0 auto;
+	padding: 1em;
+}
+
+.entry-title {
+    text-transform: uppercase;
+    font-size: 3em;
+    color:#000;
+    font-family: 'Open Sans Condensed';
+    margin: 0.2em 0 0.4em 0;
+}
+
+/*----------------------plug in styles----------------------------*/
+.email-name h4{
+
+}
+.email-link{
+	font-size: 0.9em;
+}
+
+/* ------ TEMPLATE CONTAINER OPTIONS (1024 vs full-width) ------- */
+
+.full-width-container {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.ten-twenty-four-container {
+	max-width: 1024px;
+	margin: 0 auto;
+	min-height: 100px;
+}
+
+.ten-twenty-four {
+	max-width: 1024px;
+	margin: 0 auto;
+}
+
+.loop-padding {
+	padding: 1em;
+}
+.pledge-container{
+	width: 100%;
+}
+.pledge-img{
+	text-align: center;
+	width: 100%;
+	padding: 1em;
+	
+}
+.pledge-img img{
+	width: 100%;
+}
+.pledge-copy{ 
+	text-align: center;
+	width: 100%;
+	
+}
+
+/* ------ BOOTSTRAP GRID STYLES ------ */
+
+.container { padding:0; }
+
+.container-fluid { padding:0; }
+
+.utah-table-bordered table, .utah-table-bordered th, .utah-table-bordered td {
+    border: 1px solid black;
+}
+
+/* ------ 2 COLUMN PAGE LAYOUT STYLES ------ */
+
+.main-channel { 
+	border: 1px solid #e1e1e1;
+	padding: 0;
+	margin: 0 0 1em 0;
+}
+
+.main-channel .content-padding { 
+	padding: 0 1em 1em 1em;
+}
+
+.two-column-margin {
+	margin: 1em;
+}
+
+.entry-content img { display:inline; float:left; padding: 1em 1em 1em 0; }
+
+.right-channel { 
+	float:left;
+}
+
+.right-channel p {
+	line-height: 1.3em;
+	margin: 0 0 1em 0;
+}
+
+.right-channel img { 
+	width: 100%;
+	margin: 0 0 1em 0;
+	border: 1px solid #ccc;
+}
+
+.right-channel h3 {
+font-family: 'Open Sans';
+font-size: 2em;
+padding: .2em 0 0.5em 0;
+margin: 0;
+font-weight: 400;
+}
+
+
+/* ------ SIDEBAR WIDGETS ------ */
+
+.dark-gray-sidebar {
+	background: #333;
+	padding: 1.3em;
+	color: #fff;
+	margin-bottom:1em;
+}
+
+.dark-gray-sidebar a {
+	color: #fff;
+}
+
+.light-gray-sidebar {
+	background: #e1e1e1;
+	padding: 1.3em;
+	color: #333;
+	margin-bottom:1em;
+}
+
+.light-gray-sidebar a {
+	color: #333;
+}
+
+.light-gray-sidebar h3 {
+	color: #cc0000;
+}
+
+.white-sidebar {
+	border:1px solid #e1e1e1;
+	padding: 1.3em;
+	color: #333;
+	margin-bottom:1em;
+}
+
+.white-sidebar a {
+	color: #333;
+}
+
+.white-sidebar h3 {
+	color: #cc0000;
+}
+
+.red-sidebar {
+	border:1px solid #e1e1e1;
+	background: #cc0000;
+	padding: 1.3em;
+	color: #fff;
+	margin-bottom:1em;
+}
+
+.red-sidebar a {
+	color: #fff;
+}
+
+.red-sidebar h3 {
+	color: #fff;
+}
+/* ------ IMAGE SLIDER BANNER TEXT ------ */
+
+.banner-text{
+	text-transform: uppercase;
+	display: inline-block;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: #fff;
+	font-family: 'Open Sans Condensed';
+	padding: 0.1em .5em 0.2em 0.25em;
+}
+
+.banner-text-position {
+	position:absolute;
+	bottom:16%;
+}
+.banner-text-no-sub{
+	text-transform: uppercase;
+	display: inline-block;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: #fff;
+	font-family: 'Open Sans Condensed';
+	padding: .35em;
+}
+.banner-text-position-no-sub{
+	position:absolute;
+	bottom:20%;
+}
+.banner-headline{
+	font-size: 1.2em;
+}
+.banner-subtext{
+	font-size: .8em;
+	padding-left: 5px;
+}
+.flex-control-nav{
+	display: none;	
+	bottom: 26px;
+}
+.feature.feature-grey{
+	padding: 1.4em;
+	color:#fff;
+	background-color: #333333;
+	margin-bottom: 1em;
+}
+.feature.feature-border .feature-description .learn-more a{
+	padding-bottom: 0;
+}
+
+
+.learn-more a {
+	color: #cc0000;
+	text-decoration: none;
+	display: inline-block;
+	padding: 0;
+}
+
+
+/* ------ BODY CALLOUT BOX ------- */
+
+.body-callout-box {
+	border-top:1px solid #f1f1f1;
+	color: #333;
+	padding: 1em 0 2em;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.body-callout-wrapper {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.body-callout-box h2 {
+	font-family: 'Open Sans';
+	font-size: 2em;
+	padding: 0.7em 0;
+	margin: 0;
+	font-weight: 400;
+}
+
+.body-callout-box .callout-image {
+
+}
+
+.body-callout-box .callout-image img {
+	width: 100%;
+	border: 1px solid #e1e1e1;
+}
+
+.body-callout-box .callout-description {
+	font-size: 0.9em;
+}
+.col-sm-8 .body-callout-box h2{
+	padding-top: 0;
+}
+.dark-gray-callout {
+	background: #333;
+	color: #fff;
+}
+
+.dark-gray-callout a {
+	color: #fff;
+}
+
+.light-gray-callout {
+	background: #e1e1e1;
+	color: #333;
+}
+
+.light-gray-callout a {
+	color: #333;
+}
+
+.light-gray-callout h2 {
+
+}
+
+.white-callout {
+	border:1px solid #e1e1e1;
+	color: #333;
+}
+
+.white-callout a {
+	color: #333;
+}
+
+.white-callout h2 {
+
+}
+
+.red-callout {
+	background: #cc0000;
+	color: #fff;
+}
+
+.red-callout a {
+	color: #fff;
+}
+
+.red-callout h2 {
+	color: #fff;
+}
+
+dd {
+	display:none;
+}
+
+/* ------ Footer callout box  --  may not need these styles ------- */
+.footer-callout-box {
+	background: #999;
+	color: #fff;
+	padding: 0 1em;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.footer-callout-box h2 {
+	font-family: 'Open Sans';
+	font-size: 2em;
+	padding: 0.7em 0;
+	margin: 0;
+	font-weight: 400;
+}
+
+.footer-callout-box .copy {
+	padding:0 1em 1em 0;
+	max-width: 960px;
+	margin: 0 auto;
+	font-size: 0.9em;
+}
+
+.footer-callout-box .callout-button {
+	padding: 0 0 2em 0;
+}
+
+/*==========================================================
+4. FOOTER
+==========================================================*/
+
+#footer-container {
+	background: #333;
+	text-transform: uppercase;
+	width: 100%;
+	margin: 0 auto;
+	text-align: left
+}
+
+#bottom-nav {
+	background: rgb(104, 104, 105);
+	width: 94%;
+	margin:0.85em auto;
+	min-height: 34px;
+}
+
+#bottom-nav .bottom-mobile-nav {
+	display: block;
+	margin: 0 0 0 0.8em;
+	color: #fff;
+	font-size: 0.9em;
+	line-height: 2.3em;
+	text-decoration: none;
+}
+
+#bottom-nav .bottom-mobile-nav span {
+	float: right;
+	width: 30px;
+	height: 34px;
+	margin: 0 4px;
+	background: url(images/global/sprite_elements.png) no-repeat 5px -390px;
+}
+
+
+/* -----------------------------------------
+	FOOTER BRANDING AREA
+-------------------------------------------*/
+#footer-container .brand-area {
+	width: 90%;
+	margin:0 auto;
+	color:#fff;
+}
+#footer-container .bottom-brand img {
+	max-width:100%;
+}
+#footer-container .brand-area h3 { 
+	font-size: 0.8em;
+	letter-spacing:0.07em;
+	line-height:1.2em;
+}
+#footer-container .brand-area p {
+	line-height: 1.2em;
+	margin-top:5px;
+}
+
+/* ------ footer address area ----------*/
+#footer-container .address {
+	float: left;
+	width:100%;
+	font-size:.6em;
+}
+#footer-container .address a {
+   color:#fff;
+   text-decoration:underline;
+}
+#footer-container .address .spacer {
+	margin:15px 0  0 0 ;
+}
+/* ------ footer social icons ---------*/
+#footer-container .socons {
+	float: left;
+	padding:0;
+	width:100%;
+}
+#footer-container .socons .spacer {
+	margin:15px 2% 0 0;
+}
+#footer-container .socons h3 {
+	margin:0;
+}
+#footer-container .socons ul {
+	margin:0;
+	padding:0;
+	position:relative;
+	list-style:none;
+	overflow:hidden;
+}
+#footer-container .socons li {
+	float:left;
+	margin:0 20px 15px 0;
+}
+.socons .icon-list a {
+	width:24px;
+	height:24px;
+    padding:0;
+	text-indent:-900em;
+}
+
+/* -- icon lists link background --*/
+.icon-list {list-style:none;}
+.icon-list li a {
+	background:url(images/global/sprite_elements.png) no-repeat;
+	display:block;
+	padding-left:35px;
+}
+
+/* -----------------------------------------
+	ICON LIST LINK IMAGES (hover state using sprite)
+-------------------------------------------*/
+.icon-list a.cis-link { background-position: 0 -900px; }
+.icon-list a.cis-link:hover, .icon-list a.cis-link:focus { background-position: 0 -1300px; }
+
+.icon-list a.umail-link { background-position: 0 -1000px; }
+.icon-list a.umail-link:hover, .icon-list a.umail-link:focus { background-position: 0 -1400px; }
+
+.icon-list a.facebook-link { background-position: 0 -1100px; }
+.icon-list a.facebook-link:hover, .icon-list a.facebook-link:focus { background-position: 0 -1500px; }
+
+.icon-list a.twitter-link { background-position: 0 -1200px; }
+.icon-list a.twitter-link:hover, .icon-list a.twitter-link:focus { background-position: 0 -1600px; }
+
+.icon-list a.googleplus-link { background-position: 0 -1700px; }
+.icon-list a.googleplus-link:hover, .icon-list a.googleplus-link:focus { background-position: 0 -1800px; }
+
+.icon-list a.youtube-link { background-position: 0 -5900px; }
+.icon-list a.youtube-link:hover, .icon-list a.youtube-link:focus { background-position: 0 -6000px; }
+
+
+
+/* ----------------------------------------
+	BUTTON LINKS
+-------------------------------------------*/
+#main-container a.button,
+#footer-container a.button {
+	background: rgb(204, 0, 0);
+	border: 1px solid #fff;
+	border-radius:.5em;
+	color:white;
+	font: bold .8em/1.2em Helvetice, sans-serif;
+	letter-spacing:.045em;
+	padding: 0.7em 1.5em;
+	text-align:center;
+	text-decoration: none;	
+	text-transform: uppercase;
+}
+#footer-container a.button {
+	padding: 0.3em 1em;	
+}
+#main-container .button:hover,
+#main-container .button:active,
+#main-container .button:focus,
+#footer-container .button:hover,
+#footer-container .button:active,
+#footer-container .button:focus {
+	color:white;
+	background:rgb(153, 0, 0);
+	text-decoration: none;	
+ }
+
+
+
+
+
+/*==========================================================
+5. HELPER CLASSES
+==========================================================*/
+
+.visuallyhidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
+	clip: auto;
+	height: auto;
+	margin: 0;
+	overflow: visible;
+	position: static;
+	width: auto;
+}
+
+.clearfix:before, .clearfix:after {
+	content: " ";
+	display: table;
+}
+.clearfix:after {
+	clear: both;
+}
+.clearfix {
+ *zoom: 1;
+}
+
+
+/*==========================================================
+6. MEDIA QUERIES
+==========================================================*/
+
+/* --------- LARGE MOBILE/PHABLET SCREEN SIZE ----------- */
+@media only screen and (min-width: 480px) {
+
+	#search {
+		width:162px;
+	}
+
+	/* -- social icons & brand --*/
+	#footer-container .bottom-brand,
+	#footer-container .socons {
+		float:right;
+		padding: 0;
+	}
+	#footer-container .bottom-brand .spacer,
+	#footer-container .socons .spacer {
+		margin:0 0 1em 1em;
+	}
+	/* -- address --*/
+	#footer-container .address {
+		float:left;
+		width:auto;
+	}
+	.banner-text-position {
+		position:absolute;
+		bottom:16%;
+	}
+	.banner-text {
+		padding: 0.4em 1em 0.295em 0.5em;
+		display: inline-block;
+	}
+	.banner-headline{
+		font-size: 2.4em;
+	}
+	.banner-subtext{
+		padding-left: .9em;
+		font-size: 1.8em;
+	}
+	.flex-control-nav{
+		display: block;	
+	}	
+	#utah-logo {
+		padding-right: 1em;
+	}
+	.pledge-img{
+		max-width: 500px;
+		margin: 0 auto;
+	}
+
+}	
+
+
+/* --------- TABLET SCREEN SIZE (PORTRAIT iPAD) ----------- */
+@media only screen and (min-width: 766px) {
+
+	#utah-logo {
+		position: relative;
+		top: 20px;
+		background-color: #cc0000;
+		cursor: pointer;
+	}
+
+	.main-headline {
+		padding: 1.8em 0 1em 0;
+	}
+
+	.top-menu { z-index:999; }
+
+	#top-nav {
+		width: 330px;
+		display: inline;
+		float: right;
+		margin: -0.7em 1em 0 0;
+		background: #333;
+	}
+
+	#top-nav ul.top-menu {
+		width: 330px;
+		position: absolute;
+	}	
+
+	#search-area {
+		margin: 1.5em 1em 0 .5em;		
+	}
+
+	.header-color {
+		background: transparent;
+	}
+
+	.main-headline {
+		background: 0;
+	}	
+
+	#header-bg-image {
+		display: block;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 230px;
+		z-index: -1;
+	}
+	.banner-text {
+		
+	}
+	.banner-headline{
+		font-size: 3.4em;
+	}
+	.banner-subtext{
+		padding-left: .9em;
+		font-size: 2.1em;
+	}
+	body.ten-twenty-four #header-bg-image {
+		max-width:1024px;
+	}
+	.right-channel { 
+	float:right;
+	padding-right: 0;
+	}
+	#header-bg-image img {
+		width: 100%;
+		height: 230px;
+		z-index: -1;
+	}
+	.pledge-container{
+		max-width: 765px;
+		margin: 0 auto;
+	}
+	.pledge-img{
+		width: 33%;
+		float:left;
+		margin: 0;
+	}
+	.pledge-copy{
+		width: 66%;
+		float:left;
+		margin: 0;
+		text-align: left;
+		padding: 3.7em 1em 1em 1em;
+	}
+	.utah-table-bordered table{
+		width: 100%;
+	}
+	.utah-table-bordered td{
+		width: 20%;
+	}
+}
+
+
+/* --------- DESKTOP SCREEN SIZE (AND LANDSCAPE iPAD) ----------- */
+@media only screen and (min-width: 950px) {
+
+	#header-container {
+		background: transparent url(images/global/bg_header_extent.png) center 20px  no-repeat;
+	}
+
+	header h1 {
+		font-size: 2.3em;
+		padding-top: 0.3em;
+	}	
+
+	#top-nav {
+		margin: -0.88em 1em 0 0;
+		width: auto;
+		z-index: 9999;
+	}	
+
+	#top-nav a.top-mobile-nav {
+		display: none;
+	}
+
+	#top-nav ul.top-menu {	
+		display: block;
+		position: relative;
+		width: auto;
+	}
+
+	#top-nav ul.top-menu li {
+		display: inline;
+		float: left;
+		border:0;
+		background: transparent;
+		color: #fff;
+	}
+
+	#top-nav ul.top-menu li h3, #bottom-nav ul.bottom-menu li h3 {
+		background: transparent;
+	}
+
+	#top-nav ul.top-menu li h3 {
+		margin: 0 5px;
+	}
+
+	#top-nav ul.top-menu li:hover {
+		background: #000;
+	}
+
+	#top-nav ul.top-menu li.selected {
+		background: #000;
+	}
+
+	#top-nav ul.top-menu li a {
+		color: #fff;
+		padding: 0;
+	}
+
+	#top-nav ul.top-sub-menu {
+		padding-top: 8px;
+		position: absolute;
+		width: 14em;
+		background: transparent url(images/global/sprite_elements.png) 18px -700px no-repeat;
+	}		
+
+	#top-nav ul.top-sub-menu li {
+		background-color: #333;
+		font-size: .9em;
+		line-height: 1.7em;
+		padding: .8em 1.2em;		
+		font-weight: 100;
+	}		
+
+	#top-nav ul.top-sub-menu ul {
+		width: 11.8em;
+		position: relative;
+		background: 0;
+	}
+
+	#top-nav ul.top-sub-menu ul li {
+		position: relative;
+		margin: 0 0 0 -1.2em;
+		padding: 0.4em 1.95em;
+		font-size: 1em;
+	}
+
+	#top-nav ul.top-sub-menu ul li a {
+		padding: 0; 
+	}
+
+	#top-nav ul.top-sub-menu li:first-child {
+		border-top: 0;
+	}
+
+	#main-container { position: relative; /*z-index:-9;*/ }
+
+	
+
+	/* ---- bottom nav -----*/
+
+	#footer-container footer {
+		margin: 0 auto;
+		max-width: 1004px;
+	}
+
+	#bottom-nav {
+		width: auto;
+		background: transparent;
+		float: left;
+		line-height: 1em;
+	}
+
+	#bottom-nav a.bottom-mobile-nav {
+		display: none;
+	}
+
+	#bottom-nav ul.bottom-menu {	
+		display: block;
+		position: relative;
+		width: auto;
+		margin: 1em 0 0 1em;
+	}
+
+	#bottom-nav ul.bottom-menu li {
+		display: inline;
+		float: left;
+		border:0;
+		background: transparent;
+		color: #fff;
+		width: 16em;
+		font-weight: 100;
+	}	
+
+	#bottom-nav ul.bottom-menu li h3 {
+		text-shadow: 0 0 5px #000;
+		padding: 0;
+	}
+
+	#bottom-nav ul.bottom-menu li:hover {
+		background: 0;
+	}
+
+	#bottom-nav ul.bottom-menu li.selected {
+		background: 0;
+	}
+
+	#bottom-nav ul.bottom-menu li a {
+		text-decoration: none;
+		color: #fff;
+	}
+
+	#bottom-nav ul.bottom-sub-menu {
+		display: block;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	#bottom-nav ul.bottom-sub-menu li {
+		display: block;
+		float: none;
+		width: auto;
+		padding: 0.5em 0 0 0;
+		margin: 0;
+		font-size: 0.8em;
+	}
+
+	#bottom-nav ul.bottom-sub-menu li:hover {
+		background-color: transparent;
+	}
+
+	#bottom-nav ul.bottom-sub-menu li:first-child {
+		border-top: 0;
+	}
+
+	#bottom-nav ul.bottom-sub-menu li a {
+		padding: 0;
+	}
+
+	#bottom-nav ul.bottom-sub-menu li a:hover {
+		text-decoration: underline;
+	}		
+
+
+	/* ---- branding area -----*/
+	#footer-container .brand-area {
+		float: right;
+		width: 30%;
+		margin: 1.3em auto;
+	}
+	/* -- bottom brand --*/
+	#footer-container .bottom-brand {
+		float:left;
+		margin-top:-8px;
+		width:100%;
+	}
+	#footer-container .bottom-brand .spacer{
+		margin: 0 0 1em 0
+	}
+	/* -- address ---*/
+	#footer-container .address {
+		float: left;
+		margin:0;
+		width:100%;
+	}
+	#footer-container .address .spacer {
+		margin:0;
+	}
+	/* -- social icons ---*/
+	#footer-container .socons {
+		float: left;
+		width:auto;
+	}
+	#footer-container .socons .spacer {
+		margin: 0 3px 0 2em;
+	}
+	#footer-container .socons li {
+		margin:0 10px 10px 0;
+	}	
+
+}	
+
+

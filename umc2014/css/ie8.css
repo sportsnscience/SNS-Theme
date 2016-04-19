@@ -1,0 +1,339 @@
+/*==========================================================
+6. MEDIA QUERIES
+==========================================================*/
+
+/* --------- LARGE MOBILE/PHABLET SCREEN SIZE ----------- */
+
+
+	#search {
+		width:162px;
+	}
+
+	/* -- social icons & brand --*/
+	#footer-container .bottom-brand,
+	#footer-container .socons {
+		float:right;
+		padding: 0;
+	}
+	#footer-container .bottom-brand .spacer,
+	#footer-container .socons .spacer {
+		margin:0 0 1em 1em;
+	}
+	/* -- address --*/
+	#footer-container .address {
+		float:left;
+		width:auto;
+	}
+	.banner-text-position {
+		position:absolute;
+		top:54%;
+	}
+	.banner-text {
+		padding: 0.4em 1em 0.29em 0.5em;
+		display: inline-block;
+	}
+	.banner-headline{
+		font-size: 2.4em;
+	}
+	.banner-subtext{
+		padding-left: .9em;
+		font-size: 1.8em;
+	}
+	.flex-control-nav{
+		display: block;	
+	}	
+	#utah-logo {
+		padding-right: 1em;
+	}
+
+
+
+/* --------- TABLET SCREEN SIZE (PORTRAIT iPAD) ----------- */
+
+
+	#utah-logo {
+		position: relative;
+		top: 20px;
+		background-color: #cc0000;
+		cursor: pointer;
+		width:175px;
+		height: 50px;
+	}
+
+	.main-headline {
+		padding: 1.8em 0 1em 0;
+	}
+
+	.top-menu { z-index:999; }
+
+	#top-nav {
+		width: 330px;
+		display: inline;
+		float: right;
+		margin: -0.7em 1em 0 0;
+		background: #333;
+	}
+
+	#top-nav ul.top-menu {
+		width: 330px;
+		position: absolute;
+	}	
+
+	#search-area {
+		margin: 1.5em 1em 0 .5em;		
+	}
+
+	.header-color {
+		background: transparent;
+	}
+
+	.main-headline {
+		background: 0;
+	}	
+
+	#header-bg-image {
+		display: block;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 230px;
+		z-index: -1;
+	}
+	.banner-text {
+		
+	}
+	.banner-headline{
+		font-size: 3.4em;
+	}
+	.banner-subtext{
+		padding-left: .9em;
+		font-size: 2.1em;
+	}
+
+	body.ten-twenty-four #header-bg-image {
+		max-width:1024px;
+	}
+	.right-channel { 
+	float:right;
+	padding-right: 0;
+	}
+	#header-bg-image img {
+		width: 100%;
+		height: 230px;
+		z-index: -1;
+	}
+	
+
+
+
+/* --------- DESKTOP SCREEN SIZE (AND LANDSCAPE iPAD) ----------- */
+
+
+	#header-container {
+		background: transparent url(images/global/bg_header_extent.png) center 20px  no-repeat;
+	}
+
+	header h1 {
+		font-size: 2.3em;
+		padding-top: 0.3em;
+	}	
+
+	#top-nav {
+		margin: -0.88em 1em 0 0;
+		width: auto;
+		z-index: 9999;
+	}	
+
+	#top-nav a.top-mobile-nav {
+		display: none;
+	}
+
+	#top-nav ul.top-menu {	
+		display: block;
+		position: relative;
+		width: auto;
+	}
+
+	#top-nav ul.top-menu li {
+		display: inline;
+		float: left;
+		border:0;
+		background: transparent;
+		color: #fff;
+	}
+
+	#top-nav ul.top-menu li h3, #bottom-nav ul.bottom-menu li h3 {
+		background: transparent;
+	}
+
+	#top-nav ul.top-menu li h3 {
+		margin: 0 5px;
+	}
+
+	#top-nav ul.top-menu li:hover {
+		background: #000;
+	}
+
+	#top-nav ul.top-menu li.selected {
+		background: #000;
+	}
+
+	#top-nav ul.top-menu li a {
+		color: #fff;
+		padding: 0;
+	}
+
+	#top-nav ul.top-sub-menu {
+		padding-top: 8px;
+		position: absolute;
+		width: 12em;
+		background: transparent url(images/global/sprite_elements.png) 18px -700px no-repeat;
+	}	
+
+	#top-nav ul.top-sub-menu li {
+		background-color: #333;
+		font-size: .9em;
+		line-height: 1.7em;
+		padding: .8em 1.2em;		
+		font-weight: 100;
+	}		
+
+	#top-nav ul.top-sub-menu li:first-child {
+		border-top: 0;
+	}
+
+	#main-container { position: relative; /*z-index:-9;*/ }
+
+
+
+	/* ---- bottom nav -----*/
+
+	#footer-container footer {
+		margin: 0 auto;
+		max-width: 1004px;
+	}
+
+	#bottom-nav {
+		width: auto;
+		background: transparent;
+		float: left;
+		line-height: 1em;
+	}
+
+	#bottom-nav a.bottom-mobile-nav {
+		display: none;
+	}
+
+	#bottom-nav ul.bottom-menu {	
+		display: block;
+		position: relative;
+		width: auto;
+		margin: 1em 0 0 1em;
+	}
+
+	#bottom-nav ul.bottom-menu li {
+		display: inline;
+		float: left;
+		border:0;
+		background: transparent;
+		color: #fff;
+		width: 14em;
+		font-weight: 100;
+	}	
+
+	#bottom-nav ul.bottom-menu li h3 {
+		text-shadow: 0 0 5px #000;
+		padding: 0;
+	}
+
+	#bottom-nav ul.bottom-menu li:hover {
+		background: 0;
+	}
+
+	#bottom-nav ul.bottom-menu li.selected {
+		background: 0;
+	}
+
+	#bottom-nav ul.bottom-menu li a {
+		text-decoration: none;
+		color: #fff;
+	}
+
+	#bottom-nav ul.bottom-sub-menu {
+		display: block;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	#bottom-nav ul.bottom-sub-menu li {
+		display: block;
+		float: none;
+		width: auto;
+		padding: 0.5em 0 0 0;
+		margin: 0;
+		font-size: 0.8em;
+	}
+
+	#bottom-nav ul.bottom-sub-menu li:hover {
+		background-color: transparent;
+	}
+
+	#bottom-nav ul.bottom-sub-menu li:first-child {
+		border-top: 0;
+	}
+
+	#bottom-nav ul.bottom-sub-menu li a {
+		padding: 0;
+	}
+
+	#bottom-nav ul.bottom-sub-menu li a:hover {
+		text-decoration: underline;
+	}		
+
+
+	/* ---- branding area -----*/
+	#footer-container .brand-area {
+		float: right;
+		width: 30%;
+		margin: 1.3em auto;
+	}
+	/* -- bottom brand --*/
+	#footer-container .bottom-brand {
+		float:right;
+		margin-right: 10px;
+		margin-top:10px;
+		width:auto;
+	}
+	#footer-container .bottom-brand .spacer{
+		margin: 0 0 1em 0
+	}
+	/* -- address ---*/
+	#footer-container .address {
+		float: left;
+		margin:0;
+		width:100%;
+	}
+	#footer-container .address .spacer {
+		margin:0;
+	}
+	/* -- social icons ---*/
+	#footer-container .socons {
+		float: left;
+		width:auto;
+	}
+	#footer-container .socons .spacer {
+		margin: 0 3px 0 2em;
+	}
+	#footer-container .socons li {
+		margin:0 10px 10px 0;
+	}
+	#search{
+		height: auto;
+	}	
+ 	.col-sm-8.main-channel{
+ 		width:66.66666667%
+ 	}
+ 	.col-sm-4.right-channel{
+ 		width: 33.33333333%
+ 	}
